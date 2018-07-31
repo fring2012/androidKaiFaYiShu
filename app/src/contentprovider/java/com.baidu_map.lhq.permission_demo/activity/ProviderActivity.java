@@ -1,36 +1,55 @@
 package com.baidu_map.lhq.permission_demo.activity;
 
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 
 import com.baidu_map.lhq.permission_demo.R;
 import com.baidu_map.lhq.permission_demo.activity.base.BaseActivity;
+import com.baidu_map.lhq.permission_demo.entity.Book;
+import com.baidu_map.lhq.permission_demo.entity.User;
 
 
 public class ProviderActivity extends BaseActivity {
     private static final String TAG = "ProviderActivity";
+    private ContentResolver mCr;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ApplicationInfo ai = null;
-        try {
-            ai = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        Bundle bundle = ai.metaData;
-        String myApiKey = bundle.getString("type");
-        Log.d(TAG, "onCreate: " + myApiKey);
+        setContentView(R.layout.activity_provider);
 
-        Uri uri = Uri.parse("content://BookProvider");
-        getContentResolver().query(uri,null,null,null,null);
-        getContentResolver().query(uri,null,null,null,null);
-        getContentResolver().query(uri,null,null,null,null);
+        mCr = getContentResolver();
+        Uri bookUri = Uri.parse("content://BookProvider/book");
+        ContentValues values = new ContentValues();
+        values.put("_id",6);
+        values.put("name","程序设计的艺术");
+        mCr.insert(bookUri,values);
+        Cursor bookCursor = mCr.query(bookUri,new String[]{"_id","name"},
+                null,null,null);
+        while (bookCursor.moveToNext()) {
+            Book book = new Book();
+            book.bookId = bookCursor.getInt(0);
+            book.bookName = bookCursor.getString(1);
+            Log.d(TAG,"query book:" + book.toString());
+        }
+        bookCursor.close();
+
+
+        Uri userUri = Uri.parse("content://BookProvider/user");
+        Cursor userCursor = mCr.query(userUri,new String[]{"_id","name","sex"},
+                null,null,null);
+        while (userCursor.moveToNext()) {
+            User user = new User();
+            user.userId = userCursor.getInt(0);
+            user.userName = userCursor.getString(1);
+            user.isMale = userCursor.getInt(2) == 1;
+            Log.d(TAG,"query user:" + user.toString());
+        }
+        userCursor.close();
     }
 
     @Override
