@@ -91,8 +91,7 @@ public class MainActivity extends PermissionActivity {
     }
 
     public void onClick(View view){
-        Intent intent = new Intent(this,ProviderActivity.class);
-        startActivity(intent);
+
     }
 
 
