@@ -17,6 +17,10 @@ public class SecurityCenterImpl extends ISecurityCenter.Stub{
 
     @Override
     public String decrypt(String password) throws RemoteException {
-        return null;
+        char[] chars = password.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] ^= SECRET_CODE;
+        }
+        return new String(chars);
     }
 }

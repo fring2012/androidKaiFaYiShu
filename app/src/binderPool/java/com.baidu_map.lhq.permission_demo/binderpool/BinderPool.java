@@ -42,6 +42,7 @@ public class BinderPool {
 
 
     private synchronized void connectBinderPoolService(){
+        Log.d(TAG, "connectBinderPoolService");
         mConnectBinderPoolCountDownLatch = new CountDownLatch(1);
         Intent service = new Intent(mContext,BinderPoolService.class);
         mContext.bindService(service,mBinderPoolConnection,Context.BIND_AUTO_CREATE);
@@ -77,6 +78,7 @@ public class BinderPool {
     private ServiceConnection mBinderPoolConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            Log.d(TAG, "onServiceConnected");
             mBinderPool = IBinderPool.Stub.asInterface(iBinder);
             try {
                 mBinderPool.asBinder().linkToDeath(mBinderPoolDeathRecipient, 0);
