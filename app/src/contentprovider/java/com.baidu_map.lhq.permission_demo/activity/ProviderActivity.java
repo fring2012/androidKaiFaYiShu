@@ -17,13 +17,23 @@ import com.baidu_map.lhq.permission_demo.entity.User;
 public class ProviderActivity extends BaseActivity {
     private static final String TAG = "ProviderActivity";
     private ContentResolver mCr;
+    private static final String URI_STR = "content://BookProvider/user";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_provider);
 
         mCr = getContentResolver();
-        Uri bookUri = Uri.parse("content://BookProvider/book");
+        //往contentprovider插入数据
+        initDb();
+        //往contentprovider读取数据
+        requestDb();
+
+
+    }
+
+    public void initDb(){
+        Uri bookUri = Uri.parse(URI_STR);
         ContentValues values = new ContentValues();
         values.put("_id",6);
         values.put("name","程序设计的艺术");
@@ -37,9 +47,10 @@ public class ProviderActivity extends BaseActivity {
             Log.d(TAG,"query book:" + book.toString());
         }
         bookCursor.close();
+    }
 
-
-        Uri userUri = Uri.parse("content://BookProvider/user");
+    public void requestDb(){
+        Uri userUri = Uri.parse(URI_STR);
         Cursor userCursor = mCr.query(userUri,new String[]{"_id","name","sex"},
                 null,null,null);
         while (userCursor.moveToNext()) {
@@ -51,7 +62,6 @@ public class ProviderActivity extends BaseActivity {
         }
         userCursor.close();
     }
-
     @Override
     protected int getRLayoutId() {
         return R.layout.activity_provider;
