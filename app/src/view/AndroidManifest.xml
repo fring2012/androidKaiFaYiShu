@@ -15,12 +15,13 @@
         <!-- <service android:name=".MyService">
 
         </service> -->
+        <activity android:name=".ui.activity.ViewEventActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
-        <activity android:name=".ui.activity.MainActivity" />
     </application>
 
-    <permission android:name="permission.SNReceiver"
-        android:protectionLevel="normal"/>
-    <permission android:name="custom.fota.beforeRecovery"
-        android:protectionLevel="normal"/>
 </manifest>

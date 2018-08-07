@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.activity;
+package com.baidu_map.lhq.permission_demo.ui.activity;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -9,7 +9,7 @@ import android.util.Log;
 
 
 import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.activity.base.BaseActivity;
+import com.baidu_map.lhq.permission_demo.ui.activity.base.BaseActivity;
 import com.baidu_map.lhq.permission_demo.entity.Book;
 import com.baidu_map.lhq.permission_demo.entity.User;
 
