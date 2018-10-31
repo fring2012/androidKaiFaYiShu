@@ -1,9 +1,9 @@
-package com.baidu_map.lhq.permission_demo.ui.activity.base;
+package com.baidu_map.lhq.permission_demo.base;
 
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import com.baidu_map.lhq.permission_demo.ui.activity.ano.QueryPermission;
+import com.baidu_map.lhq.permission_demo.ano.QueryPermission;
 import java.util.ArrayList;
 import java.util.List;
 

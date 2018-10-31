@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.baidu_map.lhq.permission_demo;
 
 import android.Manifest;
 import android.content.ComponentName;
@@ -18,8 +18,8 @@ import com.baidu_map.lhq.permission_demo.IBookManager;
 import com.baidu_map.lhq.permission_demo.IOnNewBookArrivedListener;
 import com.baidu_map.lhq.permission_demo.R;
 
-import com.baidu_map.lhq.permission_demo.ui.activity.ano.QueryPermission;
-import com.baidu_map.lhq.permission_demo.ui.activity.base.PermissionActivity;
+import com.baidu_map.lhq.permission_demo.ano.QueryPermission;
+import com.baidu_map.lhq.permission_demo.base.PermissionActivity;
 import com.baidu_map.lhq.permission_demo.entity.Book;
 
 import java.util.List;
