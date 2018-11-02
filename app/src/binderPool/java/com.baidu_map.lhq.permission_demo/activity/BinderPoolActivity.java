@@ -9,7 +9,7 @@ import android.util.Log;
 
 import com.baidu_map.lhq.permission_demo.ISecurityCenter;
 import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.ui.activity.base.BaseActivity;
+import com.baidu_map.lhq.permission_demo.base.BaseActivity;
 import com.baidu_map.lhq.permission_demo.binderpool.BinderPool;
 import com.baidu_map.lhq.permission_demo.binderpool.binder.ComputeImpl;
 import com.baidu_map.lhq.permission_demo.binderpool.binder.SecurityCenterImpl;

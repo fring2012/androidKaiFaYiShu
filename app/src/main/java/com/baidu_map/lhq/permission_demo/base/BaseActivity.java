@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity.base;
+package com.baidu_map.lhq.permission_demo.base;
 
 
 import android.app.Activity;

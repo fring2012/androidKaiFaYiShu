@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity.ano;
+package com.baidu_map.lhq.permission_demo.ano;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

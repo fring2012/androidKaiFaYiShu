@@ -16,7 +16,7 @@
 
         </service> -->
 
-        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
     <permission android:name="permission.SNReceiver"

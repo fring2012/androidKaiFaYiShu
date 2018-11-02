@@ -3,6 +3,7 @@ package com.baidu_map.lhq.permission_demo.ui.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -72,6 +73,11 @@ public class ViewEventActivity extends Activity {
                 mVelocityTracker.recycle();
 
         }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 }
 
