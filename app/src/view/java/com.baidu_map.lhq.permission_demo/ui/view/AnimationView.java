@@ -72,6 +72,7 @@ public class AnimationView extends View {
         mScroller = new Scroller(context);
     }
 
+
     public AnimationView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
