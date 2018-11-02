@@ -32,8 +32,11 @@ public class AnimationView extends View {
                 ///使用ViewHelper要添加nineoldandroids-2.4.0.jar包
                 int translationX = (int) ViewHelper.getTranslationX(this) + deltaX;
                 int translationY = (int)ViewHelper.getTranslationY(this) + deltaY;
-                ViewHelper.setTranslationX(this,translationX);
-                ViewHelper.setTranslationY(this,translationY);
+                this.setTranslationX(translationX);
+                this.setTranslationY(translationY);
+                //android 3.0以下要用以下代码
+//                ViewHelper.setTranslationX(this,translationX);
+//                ViewHelper.setTranslationY(this,translationY);
                 break;
             }
             case MotionEvent.ACTION_UP: {
