@@ -22,6 +22,7 @@ public class ViewEventActivity extends Activity {
     GestureDetector mGestureListener;
     AnimationView mAnimationView;
     Button mButton;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
