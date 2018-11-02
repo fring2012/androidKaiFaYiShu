@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Scroller;
 
 import com.baidu_map.lhq.permission_demo.R;
 import com.baidu_map.lhq.permission_demo.ui.gesturedetector.GestureListener;
@@ -22,6 +23,7 @@ public class ViewEventActivity extends Activity {
     GestureDetector mGestureListener;
     AnimationView mAnimationView;
     Button mButton;
+    Scroller mScroller;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,8 +33,9 @@ public class ViewEventActivity extends Activity {
         mAnimationView = findViewById(R.id.animation_view);
         mButton = findViewById(R.id.btn_view_test);
 
+
         //scrollTo 和 scrollBy是对view的内容进行滑动
-        mAnimationView.scrollTo(-500,-100);
+        //mAnimationView.scrollTo(-500,-100); //mAnimationView的内容向右滑动到500，100坐标处
 
         //通过改变view的LayoutParams的leftMargin的值，让view进行滑动
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams)mButton.getLayoutParams();
