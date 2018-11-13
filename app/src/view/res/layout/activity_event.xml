@@ -14,5 +14,5 @@
         android:id="@+id/btn_view_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="按钮"/>
+        android:text="左移animationView"/>
 </LinearLayout>
