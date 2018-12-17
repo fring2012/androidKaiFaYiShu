@@ -8,6 +8,7 @@ import android.widget.Scroller;
 
 
 public class EventView extends View {
+    //实现弹性滑动
     Scroller mScroller = new Scroller(getContext());
     // 缓慢滚动到指定位置
 
