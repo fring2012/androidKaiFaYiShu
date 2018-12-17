@@ -9,6 +9,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            moduleName "JniTest"
+            ldLibs "log", "z", "m"
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
     }
 
 
@@ -16,6 +21,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        sourceSets {
+            main {
+                jni.srcDirs = []
+            }
         }
     }
 
@@ -28,6 +38,9 @@ android {
             dimension 'default'
         }
         view{
+            dimension 'default'
+        }
+        RemoteViews {
             dimension 'default'
         }
     }
