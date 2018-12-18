@@ -9,4 +9,9 @@
         android:layout_height="wrap_content"
         android:text="notification"
         android:onClick="onJumpActivityClick"/>
+    <Button
+        android:id="@+id/btn_widget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="appWidget"/>
 </LinearLayout>

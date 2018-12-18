@@ -21,7 +21,13 @@ public class MainActivity extends BaseActivity{
         switch (id) {
             case R.id.btn_notification:
                 intent = new Intent(this,NotificationActivity.class);
+                startActivity(intent);
                 break;
+            case R.id.btn_send_custom_notification:
+                intent = new Intent();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setAction("com.ryg.chapter_5.action.CLICK");
+                sendBroadcast(intent);
             default:
                 break;
         }

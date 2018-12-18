@@ -10,6 +10,12 @@
         android:text="发通知"
         android:onClick="onClick"/>
     <Button
+        android:id="@+id/btn_send_custom_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义通知"
+        android:onClick="onClick"/>
+    <Button
         android:id="@+id/btn_clean_notification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
