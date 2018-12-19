@@ -20,7 +20,7 @@
             </meta-data>
             <intent-filter>
                 <action android:name="com.ryg.chapter_5.action.CLICK" />
-                <category android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
     </application>
