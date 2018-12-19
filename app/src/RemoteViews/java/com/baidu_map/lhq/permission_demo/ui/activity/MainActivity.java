@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity{
         switch (id) {
             case R.id.btn_notification:
                 intent = new Intent(this,NotificationActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
