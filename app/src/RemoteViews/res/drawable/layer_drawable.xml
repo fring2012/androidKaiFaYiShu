@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    一个layer-list中可以包含多个item,每个item表示一个Drawable。Item的结构也比较简
+    单,比较常用的属性有android:top、android:bottom、android:left和android:right,它们分别
+    表示Drawable相对于View的上下左右的偏移量,单位为像素。另外,我们可以通过
+    android:drawable属性来直接引用一个已有的Drawable资源,也可以在item中自定义
+    Drawable。默认情况下,layer-list中的所有的Drawable都会被缩放至View的大小,对于
+    bitmap来说,需要使用android:gravity属性才能控制图片的显示效果。Layer-list有层次的概
+    念,下面的item会覆盖上面的item,通过合理的分层,可以实现一些特殊的叠加效果。
+    下面是一个layer-list具体使用的例子,它实现了微信中的文本输入框的效果,如图6-5
+    所示。当然它只适用于白色背景上的文本输入框,另外这种效果也可以采用.9图来实现。
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="#0ac39e" />
+        </shape>
+    </item>
+    <item android:bottom="6dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="#ffffff" />
+        </shape>
+    </item>
+    <item
+    android:bottom="1dp"
+    android:left="1dp"
+    android:right="1dp">
+        <shape android:shape="rectangle" >
+            <solid android:color="#ffffff" />
+        </shape>
+    </item>
+</layer-list>

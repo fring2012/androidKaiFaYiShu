@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.baidu_map.lhq.permission_demo.R;
 import com.baidu_map.lhq.permission_demo.base.BaseActivity;
+import com.baidu_map.lhq.permission_demo.ui.drawable.DrawableActivity;
 
 public class MainActivity extends BaseActivity{
     @Override
@@ -23,10 +24,12 @@ public class MainActivity extends BaseActivity{
                 intent = new Intent(this,NotificationActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.btn_drawable:
+                intent = new Intent(this,DrawableActivity.class);
+                startActivity(intent);
             default:
                 break;
         }
-        startActivity(intent);
     }
     @Override
     protected int getRLayoutId() {

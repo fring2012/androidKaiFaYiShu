@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+TransitionDrawable对应于<transition>标签,
+***它用于实现两个Drawable之间的淡入淡出效果,它的语法如下所示。
+
+<transition
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@[package:]drawable/drawable_resource"
+        android:id="@[+][package:]id/resource_name"
+        android:top="dimension"
+        android:right="dimension"
+        android:bottom="dimension"
+        android:left="dimension" />
+</transition>
+上面语法中的属性前面已经都介绍过了,其中android:top、android:bottom、
+android:left和android:right仍然表示的是Drawable四周的偏移量,这里就不多介绍了。下面
+给出一个实际的例子。
+
+-->
+<transition xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/colorAccent" />
+    <item android:drawable="@color/colorPrimary" />
+</transition>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_bitmap"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bitmapdrable"/>
+
+    <ImageView
+        android:id="@+id/img_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shape_drawable"/>
+
+    <ImageView
+        android:id="@+id/img_layer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/layer_drawable"/>
+
+    <Button
+        android:id="@+id/btn_state_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_drawable"
+        />
+
+    <ImageView
+        android:id="@+id/img_level_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/level_list_drawable"
+        />
+
+    <TextView
+        android:id="@+id/txt_transition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transition_drawable"
+        android:text="淡入淡出效果"
+        />
+</LinearLayout>

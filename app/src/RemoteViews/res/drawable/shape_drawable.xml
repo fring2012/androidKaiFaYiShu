@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+shape
+表示图形的形状,有四个选项:rectangle(矩形)、oval(椭圆)、line(横线)和
+ring(圆环)
+-->
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--
+       表示shape的四个角的角度。它只适用于矩形shape,这里的角度是指圆角的程度,用
+    px来表示,它有如下5个属性:android:radius——为四个角同时设定相同的角度,优先级较低,会被其他四个属性覆
+    盖;
+    android:topLeftRadius——设定最上角的角度;
+    android:topRightRadius——设定右上角的角度;
+    android:bottomLeftRadius——设定最下角的角度;
+    android:bottomRightRadius——设定右下角的角度。
+    -->
+    <corners
+    android:radius="10px"
+    android:topLeftRadius="10px"
+    android:topRightRadius="10px"
+    android:bottomLeftRadius="10px"
+    android:bottomRightRadius="10px" />
+
+    <!--
+    它与<solid>标签是互相排斥的,其中solid表示纯色填充,而gradient则表示渐变效
+    果,gradient有如下几个属性:
+    android:angle——渐变的角度,默认为0,其值必须为45的倍数,0表示从左到右,90
+    表示从下到上,具体的效果需要自行体验,总之角度会影响渐变的方向;
+    android:centerX——渐变的中心点的横坐标;
+    android:centerY——渐变的中心点的纵坐标,渐变的中心点会影响渐变的具体效果;
+    android:startColor——渐变的起始色;
+    android:centerColor——渐变的中间色;
+    android:endColo——渐变的结束色;
+    android:gradientRadius——渐变半径,仅当android:type= "radial"时有效;
+    android:useLevel——一般为false,当Drawable作为StateListDrawable使用时为true;
+    android:type——渐变的类别,有linear(线性渐变)、radial(径向渐变)、
+    -->
+    <gradient
+    android:angle="0"
+    android:centerX="50"
+    android:centerY="50"
+    android:centerColor="@color/colorPrimaryDark"
+    android:endColor="@color/colorPrimary"
+    android:gradientRadius="50dp"
+    android:startColor="@color/colorAccent"
+    android:type="linear"
+    android:useLevel="true"/>
+
+    <!-- -->
+    <padding
+    android:left="10dp"
+    android:top="10dp"
+    android:right="10dp"
+    android:bottom="10dp" />
+
+    <!--
+     shape的大小,有两个属性:android:width和android:height,分别表示shape的宽/高。
+    这个表示的是shape的固有大小,但是一般来说它并不是shape最终显示的大小,这个有点
+    抽象,但是我们要明白,对于shape来说它并没有宽/高的概念,作为View的背景它会自适
+    应View的宽/高。我们知道Drawable的两个方法getIntrinsicWidth和getIntrinsicHeight表示的
+    是Drawable的固有宽/高,对于有些Drawable比如图片来说,它的固有宽/高就是图片的尺
+    寸。而对于shape来说,默认情况下它是没有固有宽/高这个概念的,这个时候
+    getIntrinsicWidth和getIntrinsicHeight会返回-1,但是如果通过<size>标签来指定宽/高信
+    息,那么这个时候shape就有了所谓的固有宽/高。因此,总结来说,<size>标签设置的宽/
+    高就是ShapeDrawable的固有宽/高,但是作为View的背景时,shape还会被拉伸或者缩小
+    为View的大小。
+     -->
+    <size
+    android:width="100dp"
+    android:height="100dp" />
+
+    <!--
+    这个标签表示纯色填充,通过android:color即可指定shape中填充的颜色。
+    -->
+    <!--
+    <solid
+    android:color="@color/colorAccent" />
+    -->
+
+    <!--
+     Shape的描边,有如下几个属性:
+    android:width——描边的宽度,越大则shape的边缘线就会看起来越粗;
+    android:color——描边的颜色;
+    android:dashWidth——组成虚线的线段的宽度;
+    android:dashGap——组成虚线的线段之间的间隔,间隔越大则虚线看起来空隙就越
+    大。
+     -->
+    <stroke
+    android:width="1px"
+    android:color="@color/colorPrimary"
+    android:dashWidth="10dp"
+    android:dashGap="1dp" />
+</shape>

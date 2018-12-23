@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    StateListDrawable对应于<selector>标签,它也是表示Drawable集合,每个Drawable都
+    对应着View的一种状态,这样系统就会根据View的状态来选择合适的Drawable。
+    StateListDrawable主要用于设置可单击的View的背景,最常见的是Button,这个读者应该
+    不陌生,它的语法如下所示。
+    <?xml version="1.0" encoding="utf-8"?>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:constantSize=["true" | "false"]
+    android:dither=["true" | "false"]
+    android:variablePadding=["true" | "false"] >
+        <item
+        android:drawable="@[package:]drawable/drawable_resource"
+        android:state_pressed=["true" | "false"]
+        android:state_focused=["true" | "false"]
+        android:state_hovered=["true" | "false"]
+        android:state_selected=["true" | "false"]
+        android:state_checkable=["true" | "false"]
+        android:state_checked=["true" | "false"]
+        android:state_enabled=["true" | "false"]
+        android:state_activated=["true" | "false"]
+        android:state_window_focused=["true" | "false"] />
+    </selector>
+    针对上面的语法,下面做简单介绍。
+    android:constantSize
+    StateListDrawable的固有大小是否不随着其状态的改变而改变的,因为状态的改变会
+    导致StateListDrawable切换到具体的Drawable,而不同的Drawable具有不同的固有大小。
+    True表示StateListDrawable的固有大小保持不变,这时它的固有大小是内部所有Drawable
+    的固有大小的最大值,false则会随着状态的改变而改变。此选项默认值为false。
+    android:dither
+    是否开启抖动效果,这个在BitmapDrawable中也有提到,开启此选项可以让图片在低
+    质量的屏幕上仍然获得较好的显示效果。此选项默认值为true。
+    android:variablePadding
+    StateListDrawable的padding表示是否随着其状态的改变而改变,true表示会随着状态
+    的改变而改变,false表示StateListDrawable的padding是内部所有Drawable的padding的最大
+    值。此选项默认值为false,并且不建议开启此选项。
+
+   *  android:state_pressed	按下的状态，（按下但是还没松开）
+   *  android:state_focused	当前View获取了焦点
+   *  android:state_selected	用户选择了当前View
+   *  android:state_checked	用户选中了View，一般用于CheckBox这种非黑即白的选项
+   *  android:state_enabled	当前View处于可用的状态
+   *  android:state_hovered	光标是否悬停，通常与focused state相同，它是4.0的新特性
+   *  android:state_checkable	组件是否能被check。如：RadioButton是可以被check的。
+   *  android:state_activated	是否被激活
+   *  android:state_window_focused	应用程序是否在前台，当有通知栏被拉下来或者一个对话框弹出的时候应用程序就不在前台了
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"
+        android:drawable="@color/colorAccent" /> <!--pressed -->
+
+    <item android:state_focused="true"
+        android:drawable="@color/colorPrimary" /> <!--focused -->
+
+    <item android:drawable="@color/colorPrimaryDark" /> <!--default -->
+</selector>

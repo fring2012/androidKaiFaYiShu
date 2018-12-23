@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+LevelListDrawable对应于<level-list>标签,它同样表示一个Drawable集合,集合中的
+每个Drawable都有一个等级(level)的概念。根据不同的等级,LevelListDrawable会切换
+为对应的Drawable,它的语法如下所示。
+    <?xml version="1.0" encoding="utf-8"?>
+    <level-list
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+        <item
+            android:drawable="@drawable/drawable_resource"
+            android:maxLevel="integer"
+            android:minLevel="integer" />
+    </level-list>
+    上面的语法中,每个item表示一个Drawable,并且有对应的等级范围,由android:min-Level和android:maxLevel来指定,
+    在最小值和最大值之间的等级会对应此item中的Drawable。下面是一个实际的例子,当它作为View的背景时,可以通过Drawable的
+    setLevel方法来设置不同的等级从而切换具体的Drawable。如果它被用来作为ImageView的前景Drawable,
+    那么还可以通过ImageView的setImageLevel方法来切换Drawable。最后,Drawable的等级是有范围的,即0~10000,最小等级是0,
+    这也是默认值,最大等级是10000。
+    <?xml version="1.0" encoding="utf-8"?>
+    <level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+        <item
+            android:drawable="@drawable/status_off"
+            android:maxLevel="0" />
+        <item
+            android:drawable="@drawable/status_on"
+            android:maxLevel="1" />
+    </level-list>
+-->
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@color/colorPrimary"
+        android:maxLevel="0" />
+    <item
+        android:drawable="@color/colorAccent"
+        android:maxLevel="1" />
+</level-list>
