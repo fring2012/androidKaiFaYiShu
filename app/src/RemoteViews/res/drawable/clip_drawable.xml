@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+         ClipDrawable对应于<clip>标签,它可以根据自己当前的等级(level)来裁剪另一个
+    Drawable,裁剪方向可以通过android:clipOrientation和android:gravity这两个属性来共同控
+    制,它的语法如下所示。
+    <?xml version="1.0" encoding="utf-8"?>
+    <clip
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:drawable="@drawable/drawable_resource"
+        android:clipOrientation=["horizontal" | "vertical"]
+        android:gravity=["top" | "bottom"|"left" | "right"|"center_vertical" |
+        "fill_vertical"|"center_horizontal"|"fill_horizontal" |
+        "center" | "fill"|"clip_vertical"|"clip_horizontal"] />
+
+    Drawable的等级(level)是有范围的,即0~10000,最小等级
+    是0,最大等级是10000,对于ClipDrawable来说,等级0表示完全裁剪,即整个Drawable都
+    不可见了,而等级10000表示不裁剪。在上面的代码中将等级设置为8000表示裁剪了
+    2000
+-->
+<clip xmlns:android="http://schemas.android.com/apk/res/android">
+
+</clip>

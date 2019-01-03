@@ -50,7 +50,7 @@
         android:drawable="@color/colorAccent" /> <!--pressed -->
 
     <item android:state_focused="true"
-        android:drawable="@color/colorPrimary" /> <!--focused -->
+        android:drawable="@color/colorWhite" /> <!--focused -->
 
     <item android:drawable="@color/colorPrimaryDark" /> <!--default -->
 </selector>

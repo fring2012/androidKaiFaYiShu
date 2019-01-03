@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.drawable;
+package com.baidu_map.lhq.permission_demo.ui.activity;
 
 import android.graphics.drawable.TransitionDrawable;
 import android.os.Bundle;

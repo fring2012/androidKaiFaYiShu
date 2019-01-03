@@ -43,6 +43,12 @@ android {
         RemoteViews {
             dimension 'default'
         }
+        animation {
+            dimension 'default'
+        }
+        window {
+            dimension 'default'
+        }
     }
 }
 

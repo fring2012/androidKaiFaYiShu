@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ScaleDrawable对应于<scale>标签,它可以根据自己的等级(level)将指定的
+    Drawable缩放到一定比例,它的语法如下所示。
+    <?xml version="1.0" encoding="utf-8"?>
+    <scale
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:drawable="@drawable/drawable_resource"
+        android:scaleGravity=["top" | "bottom" | "left" | "right" | "center_
+        vertical" |"fill_vertical" | "center_horizontal" | "fill_horizontal" | "center" | "fi
+        android:scaleHeight="percentage"
+        android:scaleWidth="percentage" />
+    在上面的属性中,android:scaleGravity的含义等同于shape中的android:gravity,而android:scaleWidth和android:scaleHeight
+    分别表示对指定Drawable宽和高的缩放比例,以百分比的形式表示,比如25%。
+-->
+<!-- 将一张图片缩放至30% -->
+<scale xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/bitmapdrable"
+    android:scaleHeight="70%"
+    android:scaleWidth="70%"
+    android:scaleGravity="center"
+    android:level="10000"
+    />

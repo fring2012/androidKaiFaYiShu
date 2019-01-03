@@ -18,8 +18,6 @@ import android.widget.Button;
 import android.widget.Scroller;
 
 import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.ui.gesturedetector.GestureListener;
-import com.baidu_map.lhq.permission_demo.ui.view.AnimationView;
 
 
 public class ViewEventActivity extends Activity {
