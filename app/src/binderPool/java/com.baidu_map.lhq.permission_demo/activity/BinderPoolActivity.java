@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 import android.os.Binder;
 import android.os.Bundle;
@@ -7,12 +7,12 @@ import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.baidu_map.lhq.permission_demo.ISecurityCenter;
-import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.base.BaseActivity;
-import com.baidu_map.lhq.permission_demo.binderpool.BinderPool;
-import com.baidu_map.lhq.permission_demo.binderpool.binder.ComputeImpl;
-import com.baidu_map.lhq.permission_demo.binderpool.binder.SecurityCenterImpl;
+import com.study.czq.androidKaiFaYiShu.ISecurityCenter;
+import com.study.czq.androidKaiFaYiShu.R;
+import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
+import com.study.czq.androidKaiFaYiShu.binderpool.BinderPool;
+import com.study.czq.androidKaiFaYiShu.binderpool.binder.ComputeImpl;
+import com.study.czq.androidKaiFaYiShu.binderpool.binder.SecurityCenterImpl;
 
 public class BinderPoolActivity extends BaseActivity {
     private ISecurityCenter mSecurityCenter;

@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.entity;
+package com.study.czq.androidKaiFaYiShu.entity;
 
 public class User {
     public int userId;

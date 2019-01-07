@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.service;
+package com.study.czq.androidKaiFaYiShu.service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.baidu_map.lhq.permission_demo.binderpool.BinderPool;
+import com.study.czq.androidKaiFaYiShu.binderpool.BinderPool;
 
 
 public class BinderPoolService extends Service {

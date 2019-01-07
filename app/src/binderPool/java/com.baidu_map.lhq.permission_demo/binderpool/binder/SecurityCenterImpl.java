@@ -1,8 +1,8 @@
-package com.baidu_map.lhq.permission_demo.binderpool.binder;
+package com.study.czq.androidKaiFaYiShu.binderpool.binder;
 
 import android.os.RemoteException;
 
-import com.baidu_map.lhq.permission_demo.ISecurityCenter;
+import com.study.czq.androidKaiFaYiShu.ISecurityCenter;
 
 public class SecurityCenterImpl extends ISecurityCenter.Stub{
     private static final char SECRET_CODE = '^';

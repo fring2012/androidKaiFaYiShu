@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ArgbEvaluator;
@@ -11,9 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.base.BaseActivity;
-import com.baidu_map.lhq.permission_demo.ui.animation.Rotate3dAnimation;
+import com.study.czq.androidKaiFaYiShu.R;
+import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
+import com.study.czq.androidKaiFaYiShu.ui.animation.Rotate3dAnimation;
 
 public class AnimationActivity extends BaseActivity {
     Button button;

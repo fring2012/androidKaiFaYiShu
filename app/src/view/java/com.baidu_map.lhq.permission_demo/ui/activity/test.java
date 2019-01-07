@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 public class test {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Scroller;
 
-import com.baidu_map.lhq.permission_demo.R;
+import com.study.czq.androidKaiFaYiShu.R;
 
 
 public class ViewEventActivity extends Activity {

@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.gesturedetector;
+package com.study.czq.androidKaiFaYiShu.ui.gesturedetector;
 
 import android.view.GestureDetector;
 import android.view.MotionEvent;

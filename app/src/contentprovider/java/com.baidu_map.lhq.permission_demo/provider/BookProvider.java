@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.provider;
+package com.study.czq.androidKaiFaYiShu.provider;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.util.Log;
 
-import com.baidu_map.lhq.permission_demo.dao.DbOpenHelper;
+import com.study.czq.androidKaiFaYiShu.dao.DbOpenHelper;
 
 public  class BookProvider extends ContentProvider {
     private static final String TAG = "BookProvider";

@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.dao;
+package com.study.czq.androidKaiFaYiShu.dao;
 
 import android.content.Context;
 import android.database.DatabaseErrorHandler;

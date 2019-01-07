@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.animation;
+package com.study.czq.androidKaiFaYiShu.ui.animation;
 
 import android.graphics.Camera;
 import android.graphics.Matrix;

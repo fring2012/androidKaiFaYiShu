@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RemoteViews;
 
-import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.base.BaseActivity;
+import com.study.czq.androidKaiFaYiShu.R;
+import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
 
 public class NotificationActivity extends BaseActivity {
     NotificationManager mNotificationManager;

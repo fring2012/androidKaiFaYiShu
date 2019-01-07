@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.binderpool;
+package com.study.czq.androidKaiFaYiShu.binderpool;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -9,10 +9,10 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.baidu_map.lhq.permission_demo.IBinderPool;
-import com.baidu_map.lhq.permission_demo.binderpool.binder.ComputeImpl;
-import com.baidu_map.lhq.permission_demo.binderpool.binder.SecurityCenterImpl;
-import com.baidu_map.lhq.permission_demo.service.BinderPoolService;
+import com.study.czq.androidKaiFaYiShu.IBinderPool;
+import com.study.czq.androidKaiFaYiShu.binderpool.binder.ComputeImpl;
+import com.study.czq.androidKaiFaYiShu.binderpool.binder.SecurityCenterImpl;
+import com.study.czq.androidKaiFaYiShu.service.BinderPoolService;
 
 import java.util.concurrent.CountDownLatch;
 

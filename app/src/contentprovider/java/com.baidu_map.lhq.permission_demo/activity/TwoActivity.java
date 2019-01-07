@@ -1,11 +1,11 @@
-package com.baidu_map.lhq.permission_demo.ui.activity;
+package com.study.czq.androidKaiFaYiShu.ui.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.baidu_map.lhq.permission_demo.R;
-import com.baidu_map.lhq.permission_demo.base.PermissionActivity;
+import com.study.czq.androidKaiFaYiShu.R;
+import com.study.czq.androidKaiFaYiShu.base.PermissionActivity;
 
 public class TwoActivity extends PermissionActivity {
     @Override

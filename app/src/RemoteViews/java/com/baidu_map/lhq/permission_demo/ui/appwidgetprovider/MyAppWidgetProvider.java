@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.appwidgetprovider;
+package com.study.czq.androidKaiFaYiShu.ui.appwidgetprovider;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -13,7 +13,7 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-import com.baidu_map.lhq.permission_demo.R;
+import com.study.czq.androidKaiFaYiShu.R;
 
 /**
  * onEnable： 当该窗口小部件第一次添加到桌面时调用该方法，可添加多次但只在第一次调用。

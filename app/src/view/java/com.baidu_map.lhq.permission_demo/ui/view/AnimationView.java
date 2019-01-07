@@ -1,4 +1,4 @@
-package com.baidu_map.lhq.permission_demo.ui.view;
+package com.study.czq.androidKaiFaYiShu.ui.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
