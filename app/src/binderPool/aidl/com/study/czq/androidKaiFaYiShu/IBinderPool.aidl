@@ -1,5 +1,5 @@
 // IBinderPool.aidl
-package com.baidu_map.lhq.permission_demo;
+package com.study.czq.androidKaiFaYiShu;
 
 // Declare any non-default types here with import statements
 
