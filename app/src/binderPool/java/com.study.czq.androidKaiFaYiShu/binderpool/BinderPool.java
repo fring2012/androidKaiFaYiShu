@@ -83,7 +83,7 @@ public class BinderPool {
             mBinderPool = IBinderPool.Stub.asInterface(iBinder);
             try {
                 mBinderPool.asBinder().linkToDeath(mBinderPoolDeathRecipient, 0);
-            }catch (RemoteException e){
+            } catch (RemoteException e) {
                 e.printStackTrace();
             }
             mConnectBinderPoolCountDownLatch.countDown();

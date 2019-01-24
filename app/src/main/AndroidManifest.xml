@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.study.czq.androidKaiFaYiShu.app.App">
-        <!-- <service android:name=".MyService">
+        <service android:name=".service.MyService"
+            android:process=":MyService">
 
-        </service> -->
+        </service>
 
-        <activity android:name="com.study.czq.androidKaiFaYiShu.MainActivity" />
+        <!--<activity android:name="com.study.czq.androidKaiFaYiShu.MainActivity" />-->
     </application>
 
     <permission android:name="permission.SNReceiver"

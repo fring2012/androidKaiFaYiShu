@@ -58,8 +58,8 @@ public class MyService extends Service{
     @Override
     public void onCreate() {
         super.onCreate();
-        mBookList.add(new Book(1,"Android"));
-        mBookList.add(new Book(2,"Ios"));
+        mBookList.add(new Book(1,"Android","A230"));
+        mBookList.add(new Book(2,"Ios","A112"));
         new Thread(new ServiceWorker()).start();
 
 
@@ -103,7 +103,7 @@ public class MyService extends Service{
                     e.printStackTrace();
                 }
                 int bookId = mBookList.size() + 1;
-                Book newBook = new Book(bookId,"new book#" + bookId);
+                Book newBook = new Book(bookId,"new book#" + bookId,"A2" + bookId);
                 try {
                     onNewBookArrived(newBook);
                 } catch (RemoteException e) {

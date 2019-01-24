@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".app.App">
-        <!-- <service android:name=".MyService">
+        <service android:name=".MyService">
 
-        </service> -->
+        </service>
         <activity android:name=".activity.BinderPoolActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,6 +24,7 @@
         <service android:name=".service.BinderPoolService">
 
         </service>
+
     </application>
 
 </manifest>
