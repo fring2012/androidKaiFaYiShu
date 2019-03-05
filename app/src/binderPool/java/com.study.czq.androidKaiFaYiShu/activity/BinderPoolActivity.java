@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
+import com.study.czq.androidKaiFaYiShu.ICompute;
 import com.study.czq.androidKaiFaYiShu.ISecurityCenter;
 import com.study.czq.androidKaiFaYiShu.R;
 import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
@@ -16,7 +17,7 @@ import com.study.czq.androidKaiFaYiShu.binderpool.binder.SecurityCenterImpl;
 
 public class BinderPoolActivity extends BaseActivity {
     private ISecurityCenter mSecurityCenter;
-    private ComputeImpl mCompute;
+    private ICompute mCompute;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class BinderPoolActivity extends BaseActivity {
         }
         Log.d(TAG,"visit ICompute");
         IBinder computeBinder = binderPool.queryBinder(BinderPool.BINDER_COMPUTE);
-        mCompute = (ComputeImpl) ComputeImpl.asInterface(computeBinder);
+        mCompute = ComputeImpl.asInterface(computeBinder);
         try {
             Log.d(TAG, "3+5=" + mCompute.add(3,5));
         } catch (RemoteException e) {

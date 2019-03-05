@@ -79,7 +79,10 @@ public class BinderPool {
     private ServiceConnection mBinderPoolConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            Log.d(TAG, "onServiceConnected");
+            /**
+             * 如果在同一进程，参数iBinder的类型为BinderPoolImpl,如果在不同进程iBinder类型为BinderPoxy
+             */
+            Log.d(TAG, "onServiceConnected:" + iBinder);
             mBinderPool = IBinderPool.Stub.asInterface(iBinder);
             try {
                 mBinderPool.asBinder().linkToDeath(mBinderPoolDeathRecipient, 0);
