@@ -84,7 +84,7 @@ public class ViewEventActivity extends Activity {
                 break;
             case MotionEvent.ACTION_MOVE:
                 mVelocityTracker.computeCurrentVelocity(1000);
-                Log.e("Velocity","x: " + mVelocityTracker.getXVelocity() + ";"
+                Trace.e("Velocity","x: " + mVelocityTracker.getXVelocity() + ";"
                         + "y: " + mVelocityTracker.getYVelocity());
                 break;
             case MotionEvent.ACTION_UP:

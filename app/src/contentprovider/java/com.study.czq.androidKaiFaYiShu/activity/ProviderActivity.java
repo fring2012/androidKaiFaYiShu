@@ -44,7 +44,7 @@ public class ProviderActivity extends BaseActivity {
             Book book = new Book();
             book.bookId = bookCursor.getInt(0);
             book.bookName = bookCursor.getString(1);
-            Log.d(TAG,"query book:" + book.toString());
+            Trace.d(TAG,"query book:" + book.toString());
         }
         bookCursor.close();
     }
@@ -58,7 +58,7 @@ public class ProviderActivity extends BaseActivity {
             user.userId = userCursor.getInt(0);
             user.userName = userCursor.getString(1);
             user.isMale = userCursor.getInt(2) == 1;
-            Log.d(TAG,"query user:" + user.toString());
+            Trace.d(TAG,"query user:" + user.toString());
         }
         userCursor.close();
     }

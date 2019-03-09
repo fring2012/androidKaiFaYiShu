@@ -86,7 +86,7 @@ public class HorizontalScrollViewEx extends ViewGroup {
             default:
                 break;
         }
-        Log.d(TAG,"intercepted=" + intercepted);
+        Trace.d(TAG,"intercepted=" + intercepted);
         mLastX = x;
         mLastY = y;
         mLastXIntercept = x;

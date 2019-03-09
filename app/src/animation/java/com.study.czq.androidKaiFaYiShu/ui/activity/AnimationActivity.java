@@ -40,7 +40,7 @@ public class AnimationActivity extends BaseActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_rotate3d:
-                Log.d("animation",view.getId() + "");
+                Trace.d("animation",view.getId() + "");
                 view.startAnimation(new Rotate3dAnimation(
                         100,200,400,500,100,true
                 ));
@@ -107,7 +107,7 @@ public class AnimationActivity extends BaseActivity {
             public void onAnimationUpdate(ValueAnimator animator) {
                 // 获得当前动画的进度值,整型,1~100之间
                 int currentValue = (Integer) animator.getAnimatedValue();
-                Log.d(TAG,"current value: " + currentValue);
+                Trace.d(TAG,"current value: " + currentValue);
                 // 获得当前进度占整个动画过程的比例,浮点型,0~1之间
                 float fraction = animator.getAnimatedFraction();
                 // 直接调用整型估值器,通过比例计算出宽度,然后再设给Button

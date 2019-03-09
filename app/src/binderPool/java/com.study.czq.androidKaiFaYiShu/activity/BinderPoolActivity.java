@@ -6,7 +6,9 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
+import com.study.czq.androidKaiFaYiShu.ICallBack;
 import com.study.czq.androidKaiFaYiShu.ICompute;
 import com.study.czq.androidKaiFaYiShu.ISecurityCenter;
 import com.study.czq.androidKaiFaYiShu.R;
@@ -14,6 +16,7 @@ import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
 import com.study.czq.androidKaiFaYiShu.binderpool.BinderPool;
 import com.study.czq.androidKaiFaYiShu.binderpool.binder.ComputeImpl;
 import com.study.czq.androidKaiFaYiShu.binderpool.binder.SecurityCenterImpl;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 public class BinderPoolActivity extends BaseActivity {
     private ISecurityCenter mSecurityCenter;
@@ -21,12 +24,18 @@ public class BinderPoolActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                doWork();
+                doWork(new View(BinderPoolActivity.this));
             }
         }).start();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -34,9 +43,20 @@ public class BinderPoolActivity extends BaseActivity {
         return R.layout.activity_binderpool;
     }
 
-    private void doWork() {
-        Log.d(TAG, "doWork");
+    public void doWork(View view) {
+        Trace.d(TAG, "doWork");
         BinderPool binderPool = BinderPool.getInstance(this);
+        binderPool.resiginCallBack(new ICallBack.Stub() {
+            @Override
+            public void onStart() throws RemoteException {
+                Trace.d("callback","in " + Thread.currentThread().getName() + " onStart");
+            }
+
+            @Override
+            public void onEnd() throws RemoteException {
+                Trace.d("callback","in " + Thread.currentThread().getName() + " onEnd");
+            }
+        });
         IBinder securityBinder = binderPool
                 .queryBinder(BinderPool.BINDER_SECURITY_CENTER);
 

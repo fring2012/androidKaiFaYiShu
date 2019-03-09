@@ -1,5 +1,6 @@
 // IBinderPool.aidl
 package com.study.czq.androidKaiFaYiShu;
+import com.study.czq.androidKaiFaYiShu.ICallBack;
 
 // Declare any non-default types here with import statements
 
@@ -9,4 +10,6 @@ interface IBinderPool {
     * @return specific Binder who's token is binderCode.
     */
     IBinder queryBinder(int binderCode);
+
+    boolean resiginCallBack(ICallBack callBack);
 }

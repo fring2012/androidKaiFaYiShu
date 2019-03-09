@@ -11,7 +11,7 @@ public class TwoActivity extends PermissionActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("TwoActivity", "onCreate: 11111");
+        Trace.d("TwoActivity", "onCreate: 11111");
     }
 
     @Override

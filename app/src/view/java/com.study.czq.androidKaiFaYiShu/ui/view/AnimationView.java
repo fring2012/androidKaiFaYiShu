@@ -30,7 +30,7 @@ public class AnimationView extends View {
             case MotionEvent.ACTION_MOVE: {
                 int deltaX = x -mLastX;
                 int deltaY = y -mLastY;
-                Log.d(TAG,"move,deltaX:" + deltaX + " deltaY:" + deltaY);
+                Trace.d(TAG,"move,deltaX:" + deltaX + " deltaY:" + deltaY);
                 ///使用ViewHelper要添加nineoldandroids-2.4.0.jar包
                 int translationX = (int) ViewHelper.getTranslationX(this) + deltaX;
                 int translationY = (int)ViewHelper.getTranslationY(this) + deltaY;
@@ -56,7 +56,7 @@ public class AnimationView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Log.d(TAG, "onDraw: ");
+        Trace.d(TAG, "onDraw: ");
         Paint paint = new Paint();
         paint.setColor(Color.RED);
         canvas.drawCircle(50,50,50,paint);

@@ -11,9 +11,11 @@ import android.util.Log;
 
 
 import com.study.czq.androidKaiFaYiShu.IBinderPool;
+import com.study.czq.androidKaiFaYiShu.ICallBack;
 import com.study.czq.androidKaiFaYiShu.binderpool.binder.ComputeImpl;
 import com.study.czq.androidKaiFaYiShu.binderpool.binder.SecurityCenterImpl;
 import com.study.czq.androidKaiFaYiShu.service.BinderPoolService;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -43,9 +45,10 @@ public class BinderPool {
 
 
     private synchronized void connectBinderPoolService(){
-        Log.d(TAG, "connectBinderPoolService");
+        Trace.d(TAG, "connectBinderPoolService");
         mConnectBinderPoolCountDownLatch = new CountDownLatch(1);
         Intent service = new Intent(mContext,BinderPoolService.class);
+//        mContext.startService(service);
         mContext.bindService(service,mBinderPoolConnection,Context.BIND_AUTO_CREATE);
         try {
             mConnectBinderPoolCountDownLatch.await();
@@ -75,14 +78,25 @@ public class BinderPool {
         }
         return binder;
     }
+    public boolean resiginCallBack(ICallBack callBack) {
+        Trace.d(TAG,"callBack:" + callBack);
+        try {
+            if (mBinderPool != null) {
+                return mBinderPool.resiginCallBack(callBack);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
 
+    }
     private ServiceConnection mBinderPoolConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             /**
              * 如果在同一进程，参数iBinder的类型为BinderPoolImpl,如果在不同进程iBinder类型为BinderPoxy
              */
-            Log.d(TAG, "onServiceConnected:" + iBinder);
+            Trace.d(TAG, "onServiceConnected:" + iBinder);
             mBinderPool = IBinderPool.Stub.asInterface(iBinder);
             try {
                 mBinderPool.asBinder().linkToDeath(mBinderPoolDeathRecipient, 0);
@@ -102,7 +116,7 @@ public class BinderPool {
 
         @Override
         public void binderDied() {
-            Log.w(TAG, "binder died");
+            Trace.w(TAG, "binder died");
             mBinderPool.asBinder().unlinkToDeath(mBinderPoolDeathRecipient, 0);
             mBinderPool = null;
             connectBinderPoolService();
@@ -115,8 +129,11 @@ public class BinderPool {
 
 
     public static class BinderPoolImpl extends IBinderPool.Stub{
+        private ICallBack mICallBack;
         @Override
         public IBinder queryBinder(int binderCode) throws RemoteException {
+            if (mICallBack != null)
+                mICallBack.onStart();
             IBinder binder = null;
             switch (binderCode){
                 case BINDER_SECURITY_CENTER:
@@ -128,7 +145,15 @@ public class BinderPool {
                 default:
                     break;
             }
+            if (mICallBack != null)
+                mICallBack.onEnd();
             return binder;
+        }
+
+        @Override
+        public boolean resiginCallBack(ICallBack callBack) throws RemoteException {
+            mICallBack = callBack;
+            return true;
         }
     }
 

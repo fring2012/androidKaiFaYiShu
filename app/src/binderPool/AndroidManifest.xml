@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!--
+        android:process=":BinderPool"-->
         <service android:name=".service.BinderPoolService"
-            android:process=":BinderPool">
+            android:process=":BinderPool" >
 
         </service>
 

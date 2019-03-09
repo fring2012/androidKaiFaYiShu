@@ -22,6 +22,7 @@ import com.study.czq.androidKaiFaYiShu.ano.QueryPermission;
 import com.study.czq.androidKaiFaYiShu.base.PermissionActivity;
 import com.study.czq.androidKaiFaYiShu.entity.Book;
 import com.study.czq.androidKaiFaYiShu.service.MyService;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 import java.util.List;
 
@@ -62,14 +63,14 @@ public class MainActivity extends PermissionActivity {
             try {
 
                 List<Book> list = mBinder.getBookList();
-                Log.i(TAG,"query book list,list type:"
+                Trace.i(TAG,"query book list,list type:"
                         + list.getClass().getCanonicalName());
-                Log.i(TAG,"query book list:" + list.toString());
+                Trace.i(TAG,"query book list:" + list.toString());
                 Book newBook = new Book(3,"Android进阶","A230");
                 mBinder.addBook(newBook);
-                Log.i(TAG,"add book:" + newBook);
+                Trace.i(TAG,"add book:" + newBook);
                 List<Book> newList = mBinder.getBookList();
-                Log.i(TAG,"query book list:" + newList.toString());
+                Trace.i(TAG,"query book list:" + newList.toString());
                 mBinder.registerListener(mOnNewBookArrivedListener);
             } catch (RemoteException e) {
                 e.printStackTrace();
@@ -86,7 +87,7 @@ public class MainActivity extends PermissionActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case MESSAGE_NEW_BOOK_ARRIVED:
-                    Log.d(TAG,"receive new book :" + msg.obj);
+                    Trace.d(TAG,"receive new book :" + msg.obj);
                     break;
                 default:
                     super.handleMessage(msg);
@@ -120,7 +121,7 @@ public class MainActivity extends PermissionActivity {
         if (mBinder != null
                 && mBinder.asBinder().isBinderAlive()) {
             try {
-                Log.i(TAG,"unregister listener:");
+                Trace.i(TAG,"unregister listener:");
                 mBinder.unregisterListener(mOnNewBookArrivedListener);
             } catch (RemoteException e) {
                 e.printStackTrace();

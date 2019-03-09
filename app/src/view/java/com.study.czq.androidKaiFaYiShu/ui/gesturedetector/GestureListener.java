@@ -21,7 +21,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public boolean onDown(MotionEvent e) {
-        Log.d(TAG,"onDown(MotionEvent e)");
+        Trace.d(TAG,"onDown(MotionEvent e)");
         return false;
     }
 
@@ -33,7 +33,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public void onShowPress(MotionEvent e) {
-        Log.d(TAG,"onShowPress(MotionEvent e)");
+        Trace.d(TAG,"onShowPress(MotionEvent e)");
     }
 
     /**
@@ -45,7 +45,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        Log.d(TAG,"onSingleTapUp(MotionEvent e)");
+        Trace.d(TAG,"onSingleTapUp(MotionEvent e)");
         return false;
     }
 
@@ -61,7 +61,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        Log.d(TAG,"onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)");
+        Trace.d(TAG,"onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)");
         return false;
     }
 
@@ -72,7 +72,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public void onLongPress(MotionEvent e) {
-        Log.d(TAG,"onLongPress(MotionEvent e)");
+        Trace.d(TAG,"onLongPress(MotionEvent e)");
 
     }
 
@@ -89,7 +89,7 @@ public class GestureListener implements OnGestureListener{
      */
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        Log.d(TAG,"onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)");
+        Trace.d(TAG,"onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)");
         return false;
     }
 }

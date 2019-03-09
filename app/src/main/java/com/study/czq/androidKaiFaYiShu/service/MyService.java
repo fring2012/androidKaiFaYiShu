@@ -11,6 +11,7 @@ import android.util.Log;
 import com.study.czq.androidKaiFaYiShu.IBookManager;
 import com.study.czq.androidKaiFaYiShu.IOnNewBookArrivedListener;
 import com.study.czq.androidKaiFaYiShu.entity.Book;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,14 +43,14 @@ public class MyService extends Service{
 
             mListenerList.register(listener);
 
-            Log.d(TAG,"registerListener,size:" + mListenerList.beginBroadcast());
+            Trace.d(TAG,"registerListener,size:" + mListenerList.beginBroadcast());
             mListenerList.finishBroadcast();
         }
 
         @Override
         public void unregisterListener(com.study.czq.androidKaiFaYiShu.IOnNewBookArrivedListener listener) throws RemoteException {
                 mListenerList.unregister(listener);
-            Log.d(TAG,"unregisterListener,current size:" + mListenerList.
+            Trace.d(TAG,"unregisterListener,current size:" + mListenerList.
                     beginBroadcast());
             mListenerList.finishBroadcast();
         }
@@ -75,12 +76,12 @@ public class MyService extends Service{
 
     private void onNewBookArrived(Book book) throws RemoteException {
         mBookList.add(book);
-        Log.d(TAG,"onNewBookArrived,notify listeners:" + mListenerList.beginBroadcast());
+        Trace.d(TAG,"onNewBookArrived,notify listeners:" + mListenerList.beginBroadcast());
         mListenerList.finishBroadcast();
         final int n = mListenerList.beginBroadcast();
         for (int i = 0; i < n; i++) {
             IOnNewBookArrivedListener listener = mListenerList.getBroadcastItem(i);
-            Log.d(TAG,"onNewBookArrived,notify listener:" + listener);
+            Trace.d(TAG,"onNewBookArrived,notify listener:" + listener);
             listener.onNewBookArrived(book);
         }
         mListenerList.finishBroadcast();
