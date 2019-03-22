@@ -55,6 +55,9 @@ android {
         bitmap {
             dimension 'default'
         }
+        crashhandler {
+            dimension 'default'
+        }
     }
 }
 
