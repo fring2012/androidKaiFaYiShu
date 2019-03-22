@@ -52,6 +52,9 @@ android {
         window {
             dimension 'default'
         }
+        bitmap {
+            dimension 'default'
+        }
     }
 }
 

@@ -12,6 +12,7 @@ import com.study.czq.androidKaiFaYiShu.R;
 import com.study.czq.androidKaiFaYiShu.base.BaseActivity;
 import com.study.czq.androidKaiFaYiShu.entity.Book;
 import com.study.czq.androidKaiFaYiShu.entity.User;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 
 public class ProviderActivity extends BaseActivity {

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.study.czq.androidKaiFaYiShu.dao.DbOpenHelper;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 public  class BookProvider extends ContentProvider {
     private static final String TAG = "BookProvider";
@@ -35,7 +36,7 @@ public  class BookProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        Trace.d(TAG,"onCreate,current thread:"
+        Log.d(TAG,"onCreate,current thread:"
                 + Thread.currentThread().getName());
         mContext = getContext();
 //ContentProvider创建时,初始化数据库。注意:这里仅仅是为了演示,实际使用中不推荐在主线程中进行耗时的数据

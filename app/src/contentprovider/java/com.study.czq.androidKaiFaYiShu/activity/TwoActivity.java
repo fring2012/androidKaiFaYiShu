@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.study.czq.androidKaiFaYiShu.R;
 import com.study.czq.androidKaiFaYiShu.base.PermissionActivity;
+import com.study.czq.androidKaiFaYiShu.utils.Trace;
 
 public class TwoActivity extends PermissionActivity {
     @Override
